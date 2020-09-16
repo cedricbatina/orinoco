@@ -1,0 +1,39 @@
+body {
+  background-color: #0a0101;
+}
+
+h4 {
+  color: #5efa80;
+}
+
+p {
+  color: #f74343;
+}
+
+.card {
+  background-color: white;
+  margin: 1%;
+  padding: 2%;
+}
+
+h3 {
+  color: white;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+button {
+  margin-bottom: 3%;
+  text-align: center;
+  padding: 3%;
+  width: auto;
+  border-radius: 15px;
+  color: aqua;
+  background-color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 0%;
+}
+/*# sourceMappingURL=main.css.map */
