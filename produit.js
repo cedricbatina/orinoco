@@ -6,16 +6,21 @@ fetch("http://localhost:3000/api/cameras/"+id)
 .then(response => response.json())
 .then(response => {
 console.log(response)
+
 const productMainContainer = document.getElementById("productMainContainer") //code for the great Container
     const product = document.getElementById("main")
     // code for article's name
 
-      const productTitle = document.createElement("h2")
+   const productId = document.createElement("h3")
+    product.appendChild(productId)
+    productId.innerHTML = id
+
+      const productTitle = document.createElement("h3")
       product.appendChild(productTitle)
       productTitle.innerHTML = response.name
 
     // code for article's price
-    const productPrice = document.createElement("h2")
+    const productPrice = document.createElement("h4")
       product.appendChild(productPrice)
       productPrice.innerHTML = response.price
 
@@ -24,11 +29,16 @@ const productMainContainer = document.getElementById("productMainContainer") //c
     product.appendChild(productDescription)
     productDescription.innerHTML = response.description
      
+    // code for article's image
   const productPicture = document.createElement("img")
     product.appendChild(productPicture)
     productPicture.src = response.imageUrl
   
-  const lenses = document.createElement("select")
+  const label = document.createElement("label")  //creating an element label 
+    label.textContent = "Personnalisez votre produit en choisissant vos lentilles"
+
+    const lenses = document.createElement("select") 
+    label.appendChild(lenses)
     
     response.lenses.forEach(element => {
       console.log(element)
@@ -44,8 +54,8 @@ const productMainContainer = document.getElementById("productMainContainer") //c
     ajout.addEventListener("click",function(){
       if (localStorage.getItem("panier")){
           const panier = JSON.parse(localStorage.getItem("panier"))
-          panier.push(response)
-          localStorage.setItem("panier", JSON.stringify(panier))
+            panier.push(response)
+            localStorage.setItem("panier", JSON.stringify(panier))
       }
       else{
         const panier = []
