@@ -1,25 +1,24 @@
 body{
-    background-color: $secondaryColor;
+    background-color: $firstColor;
+} 
+.jumbotron{
+    background-color: $firstColor;
+    margin-top: 2%;
+    color: $secondColor;
+}
+ 
+p{
+    color: $firstColor;
+}
+a{
+    color: $firstColor;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
-h4{
-    color: rgb(94, 250, 128);
-}
-p{
-    color: rgb(247, 67, 67);
-}
-.card{
-    background-color:black;
-    margin: 1%;
-    padding: 2%;
+h2{
+    color: $secondColor;
 }
 h3{
-    color: white;
-}
-.card-img-top{
-    border-radius: 10px;
-    
-}
-table{
-    color: aliceblue;
+    color: $thirdColor;
 }

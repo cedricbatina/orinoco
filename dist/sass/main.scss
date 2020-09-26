@@ -1,6 +1,12 @@
-@import "./utils/variables";
+@import "./utils/variables";  
+@import "./utils/mixins";
 @import "./base/body";
 //components after base and then layouts
-@import "./layouts/button";
+@import "./components/button";
+@import "./layouts/header";
+@import "./layouts/footer";
 // afer layouts, come pages
+@import "./pages/accueil";
+@import "./pages/produit";
+@import "./pages/panier";
 

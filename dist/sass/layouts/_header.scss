@@ -1,0 +1,25 @@
+/*.navbar-toggler{
+    float: right;
+}
+*/
+.header{
+    border:  1px solid $firstColor;
+    background-color: $secondColor;
+    
+}
+.navbar-toggler{
+    background-color: $firstColor;
+}
+/*.navbar{
+    margin: auto;
+    padding-left: 5%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-link{
+    color: $firstColor;
+}*/
+.navbar-item{
+    margin-left: 5%;
+}

@@ -1,43 +1,158 @@
 body {
-  background-color: #0a0101;
+  background-color: #000000;
 }
 
-h4 {
-  color: #5efa80;
+.jumbotron {
+  background-color: #000000;
+  margin-top: 2%;
+  color: #ffffff;
 }
 
 p {
-  color: #f74343;
+  color: #000000;
 }
 
-.card {
-  background-color: black;
-  margin: 1%;
-  padding: 2%;
+a {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+h2 {
+  color: #ffffff;
 }
 
 h3 {
-  color: white;
+  color: #43eb7b;
 }
 
-.card-img-top {
+.btn {
+  margin-bottom: 2%;
+  text-align: center;
+  padding: .5%;
+  width: auto;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #04778b;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 2%;
+}
+
+/*.navbar-toggler{
+    float: right;
+}
+*/
+.header {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+.navbar-toggler {
+  background-color: #000000;
+}
+
+/*.navbar{
+    margin: auto;
+    padding-left: 5%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-link{
+    color: $firstColor;
+}*/
+.navbar-item {
+  margin-left: 5%;
+}
+
+#myFooter {
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  margin-top: 3%;
+  padding: 1%;
+  position: fixed;
+  bottom: 0%;
+}
+
+.card {
+  background-color: #000000;
+  margin: 3%;
+  padding: 2%;
+  border: 1px solid #ffffff;
   border-radius: 10px;
 }
 
-table {
-  color: aliceblue;
+#article {
+  margin-left: 2%;
 }
 
-button {
-  margin-bottom: 3%;
-  text-align: center;
-  padding: 3%;
-  width: auto;
-  border-radius: 15px;
-  color: aqua;
-  background-color: black;
+#numero, #nom, #prix {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#texte {
+  color: #ffffff;
+  margin-left: 3%;
+}
+
+#personnalisation {
+  background-color: #d6d8da;
+  height: 5em;
+  color: #000000;
   font-size: 1.5em;
   font-weight: bold;
-  margin-right: 0%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+select {
+  background-color: #000000;
+  margin-left: 5%;
+  color: #ffffff;
+}
+
+#lensesLegend {
+  color: #000000;
+  text-align: center;
+}
+
+#ajout {
+  margin-bottom: 10%;
+  padding: 3%;
+  font-size: 2em;
+}
+
+#mySection {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#table {
+  color: #ffffff;
+}
+
+#tableHeader, #tableFooter {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+td {
+  margin: 2.5%;
+  padding: 2%;
+}
+
+#delete {
+  color: #f14c46;
+  cursor: pointer;
+  font-size: .8em;
 }
 /*# sourceMappingURL=main.css.map */

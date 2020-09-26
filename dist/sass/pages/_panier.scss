@@ -1,0 +1,25 @@
+#mySection{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#table{
+    color: $secondColor;
+}
+#tableHeader,#tableFooter{
+    background-color: $secondColor;
+    color: $firstColor;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+td{
+    margin: 2.5%;
+    padding: 2%;
+}
+#delete{
+    color: $seventhColor;
+    cursor: pointer;
+    font-size: .8em;
+}
+
