@@ -34,7 +34,7 @@ function generateCamera(response){
                   section.setAttribute("id","article")
                     const articleId = document.createElement("h2")
                     section.appendChild(articleId)
-                      articleId.textContent = "Reférence:       " +   ""   + element._id
+                      articleId.textContent = "Reférence:" + "      " + element._id
                        // generating objectId
                       articleId.classList.add = ("card-title")
                       // code for title

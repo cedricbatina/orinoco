@@ -33,7 +33,7 @@
         <section id="greatContainer" class="container bg-light">
         </section>
         <section id="mySection">
-            <table id="table"><!--creating a table-->
+            <table id="table" class="col-6"><!--creating a table-->
                 <thead id="tableHeader">
                     <tr id="tableTitle">
                     </tr>    
@@ -45,34 +45,33 @@
                 </tfoot>
             </table><!--end of the table-->
         </section>
-        <section>
+        <section id="formulaire">
             <form id="contactFormular"><!--creating a <form>-->
                 <fieldset id="formularFieldset">
                     <legend id="legend"></legend>
                     <div class="form-control">
-                        <label id="firstNameLabel"></label>
-                        <input id="firstName">
-                        <span id="firstNameError" class="error" ></span>
+                        <label id="firstNameLabel"><span id="firstNameError" class="error" ></span></label>
+                        <input id="firstName" class="input col-12">
                     </div>
                     <div class="form-control">
-                        <label id="lastNameLabel"></label>
-                        <input id="lastName">
-                        <span id="lastNameError" class="error"></span>
+                        <label id="lastNameLabel"><span id="lastNameError" class="error">Hello How you doin'?</span></label>
+                        <input id="lastName" class="input col-12">
+                        
                     </div>
                     <div class="form-control">
-                        <label id="cityLabel"></label>
-                        <input id="city">
-                        <span id="cityError" class="error"></span>
+                        <label id="cityLabel"><span id="cityError" class="error"></span></label>
+                        <input id="city" class="input col-12" required placeholder="ex: Bordeaux">
+                        
                     </div>
                     <div class="form-control">
-                        <label id="addressLabel"></label>
-                        <input id="address">
-                        <span id="addressError" class="error"></span>
+                        <label id="addressLabel"><span id="addressError" class="error"></span></label>
+                        <input id="address" class="input col-12" placeholder="ex: 150, Boulevard des codeurs">
+                        
                     </div>
                     <div class="form-control">
-                        <label id="emailLabel"></label>
-                        <input id="email">
-                        <span id="emailError" class="error"></span>
+                        <label id="emailLabel"><span id="emailError" class="error"></span></label>
+                        <input id="email" class="input col-12" required>
+                        
                     </div>
                 </fieldset>
             </form>
