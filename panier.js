@@ -34,7 +34,7 @@ for (let i = 0; i < cameraInBasket.length; i++) {
     "</td><td>" +
     cameraInBasket[i].price +
     "</td><td>" +
-    "<button id=" +
+    "<button id='supprimez'" +
     i +
     " class='supprimez'>Supprimez</button>" +
     "</td></tr>";
@@ -203,11 +203,11 @@ formularButton.addEventListener("click", function (event) {
   //checkInputs();
 
   let contact = {
-    firstName: "bla balk", //firstNameValue,
-    lastName: "follow", //lastNameValue,
-    city: "blaorujdira", //cityValue,
-    address: "love and prosperity", //addressValue,
-    email: "love", //emailValue
+    firstName: document.getElementById("firstName").value, //firstNameValue,
+    lastName: document.getElementById("lastName").value, //lastNameValue,
+    city: document.getElementById("city").value,
+    address: document.getElementById("address").value, //addressValue,
+    email: document.getElementById("email").value, //emailValue
   };
 
   fetch("http://localhost:3000/api/cameras/order", {
@@ -220,8 +220,9 @@ formularButton.addEventListener("click", function (event) {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res);
-      window.location.href = "confirmation.html?id=" + res.orderId;
+      console.log(res.contact);
+      window.location.href =
+        "confirmation.html?id=" + res.orderId + "&total=" + total;
     })
     .catch(function (res) {
       console.log(res);

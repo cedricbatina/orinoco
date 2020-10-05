@@ -1,18 +1,20 @@
 const param = window.location.search;
 const searchParam = new URLSearchParams(param);
 const id = searchParam.get("id");
-
+const greatContainer = document.getElementById("greatContainer"); //code for the great Container
 fetch("http://localhost:3000/api/cameras/" + id)
   .then((response) => response.json())
   .then((response) => {
     console.log(response);
     generateProduct(response);
   })
-  .catch((error) => console.log(error)); // j'ai ajouté ceci pour l'erreur en cas de promesse non tenue
+  .catch((error) => {
+    greatContainer.innerHTML =
+      "<h2 id='messageError'>Le serveur a rencontré un probleme, veuillez ressayer plus tard !</h2>";
+  }); // j'ai ajouté ceci pour l'erreur en cas de promesse non tenue
 
 // creating a function
 function generateProduct(response) {
-  const greatContainer = document.getElementById("greatContainer"); //code for the great Container
   const mainTitle = document.createElement("h1");
   greatContainer.appendChild(mainTitle);
   mainTitle.classList.add("jumbotron", "text-center");
@@ -107,11 +109,11 @@ function generateProduct(response) {
   const addingButton = document.createElement("button");
   addingButton.textContent = "Ajouter au panier";
   product.appendChild(addingButton);
-  addingButton.classList.add("btn", "col-12");
+  addingButton.classList.add("btn");
   addingButton.setAttribute("id", "ajout");
   addingButton.addEventListener("click", function () {
     if (localStorage.getItem("panier")) {
-      const panier = JSON.parse(localStorage.getItem("panier"));
+      let panier = JSON.parse(localStorage.getItem("panier"));
       panier.push(response);
       localStorage.setItem("panier", JSON.stringify(panier));
     } else {
