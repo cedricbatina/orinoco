@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="../node/modules/bootstrap/scss/bootstrap.css"> -->
+    <!--<link rel="stylesheet" href="../node/modules/bootstrap/scss/bootstrap.css">-->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -14,8 +14,8 @@
     <title>Orinoco - Confirmation</title>
   </head>
   <body>
-    <section class="bg-white">
-      <header class="container row">
+    <section class="header">
+      <header class="container row modal-header">
         <nav class="col-sm-12 navbar navbar-expand-xl navbar-dark">
           <a class="navbar-brand col-sm-6" href="index.html"
             ><img src="images/logoOrinoco.png" alt="logo"
@@ -30,11 +30,14 @@
           </button>
           <div id="navbarContent" class="collapse navbar-collapse col-6">
             <ul class="navbar-nav">
-              <li class="navbar-item active">
+              <li class="navbar-item">
                 <a class="navbar-link" href="index.html">Accueil</a>
               </li>
               <li class="navbar-item">
                 <a class="navbar-link" href="panier.html">Panier</a>
+              </li>
+              <li class="navbar-item active">
+                <a class="navbar-link" href="confirmation.html">Confirmation</a>
               </li>
             </ul>
           </div>
@@ -42,22 +45,26 @@
       </header>
     </section>
     <section id="greatContainer" class="container bg-light"></section>
-    <footer id="myFooter" class="col row">
-      <div class="mentions col-md-4">
+    <div class="confirmation">
+      <section id="orderContainer"></section>
+      <section id="totalContainer"></section>
+    </div>
+    <footer id="myFooter" class="row">
+      <div class="mentions col-md-8">
         <a class="footerThirdParagraph" href="#" target="_blank"
           >Mentions légales</a
         >
       </div>
-      <div class="propos col-md-4">
-        <a class="footerThirdParagraph" href="#" target="_blank">A Propos</a>
+      <div class="propos col-md-2">
+        <a class="footerThirdParagraph" href="#" target="_blank">Services</a>
       </div>
-      <div class="contact col-md-4">
+      <div class="contact col-md-2">
         <a class="footerThirdParagraph" href="#" target="_blank">Contact</a>
       </div>
     </footer>
     <!-- Optional JavaScript -->
     <script src="confirmation.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -1,14 +1,25 @@
-.card{
-    background-color: $firstColor;
-    margin: 3%;
-    padding: 2%;
-    border: 1px solid $secondColor;
-    border-radius: 10px;
+.card {
+  background-color: $firstColor;
+  margin: 3%;
+  padding: 2%;
+  border: 1px solid $secondColor;
+  border-radius: 10px;
 }
-#article{
-    margin-left: 2%;
+#article {
+  margin-left: 2%;
+  margin-right: 2%;
 }
-#cameras{
-    margin-bottom: 30%;
-    margin-top: 10%;
+#cameras {
+  margin-bottom: 30%;
+  margin-top: 10%;
+}
+#titleParagraph {
+  @include forParagraph;
+}
+#articleId,
+#articleTitle {
+  @include forIdNamePrice;
+}
+#articlePrice {
+  @include forIdNamePrice($color: $thirdColor);
 }

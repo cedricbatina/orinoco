@@ -1,10 +1,23 @@
-#numero,#nom,#prix{
-  margin-left: 2%;
-  margin-right: 2%;
-
-}
-#texte{
+#texte {
   color: $secondColor;
-  margin-left: 3%;
-
+}
+#descriptionDuProduit {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 2%;
+  border-bottom: 1px solid $thirdColor;
+}
+.paragraphesDuProduit {
+  @include forParagraph;
+}
+#numero,
+#nom,
+#prix {
+  @include forIdNamePrice;
+}
+#prix {
+  color: $thirdColor;
+}
+span {
+  font-weight: bold;
 }

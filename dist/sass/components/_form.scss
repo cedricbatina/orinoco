@@ -1,45 +1,48 @@
 // code for select options on page produit.html
-#personnalisation{
-   @include codeForForm;
-
+#personnalisation {
+  @include codeForForm;
+  text-align: center;
+  width: auto;
 }
-select{
-    background-color: $firstColor;
-    margin-left: 5%;
-    color: $secondColor;
+select {
+  background-color: $firstColor;
+  margin: 2%;
+  color: $secondColor;
 }
-#lensesLegend{
-    color: $firstColor;
-    text-align: center;
+#lensesLegend {
+  color: $firstColor;
+  text-align: center;
 }
 //here ends code for options
 
 //here goes the code for the <form> on page panier.html
-#formulaire{
-    @include codeForForm;
-    margin-bottom: 20%;
-    background-color: $firstColor;
-
+#formulaire {
+  @include codeForForm;
+  margin-bottom: 30%;
+  background-color: $firstColor;
 }
-#contactFormular{
-    width: 100%;
-    color: $firstColor;
-    background-color: $forthColor;
-    margin-bottom: 40%;
+#contactFormular {
+  width: 100%;
+  color: $firstColor;
+  background-color: $forthColor;
+  margin-bottom: 40%;
 }
-.form-control{
-    margin-bottom: 10%;
-    color: $secondColor;
-    background-color: $firstColor;
+legend {
+  text-align: center;
 }
-.error{
-    margin-bottom: 5%;
-    font-size: .8em;
-    color: $seventhColor;
+.form-group {
+  margin-bottom: 10%;
+  color: $secondColor;
+  background-color: $firstColor;
 }
-.input{
-    background-color: $secondColor;
-    color: $firstColor;
-    border: 1px solid $firstColor;
-    border-radius: 10px;
+.error {
+  margin-bottom: 5%;
+  font-size: 0.8em;
+  color: $seventhColor;
+}
+.input {
+  background-color: $secondColor;
+  color: $firstColor;
+  border: 1px solid $firstColor;
+  border-radius: 10px;
 }

@@ -3,21 +3,30 @@ const searchConf = new URLSearchParams(conf);
 const orderId = searchConf.get("id");
 const total = searchConf.get("total");
 let cameraBasket = JSON.parse(localStorage.getItem("confirmation"));
-
-console.log(orderId);
-console.log(conf);
-console.log(localStorage.getItem("total"));
-
 const mainTitle = document.createElement("h1");
 greatContainer.appendChild(mainTitle);
-mainTitle.classList.add("jumbotron", "text-center");
+mainTitle.classList.add("jumbotron", "text-center", "success");
 mainTitle.innerHTML = "Votre commande a été validé";
 const mainParagraph = document.createElement("p");
 greatContainer.appendChild(mainParagraph);
 mainParagraph.classList.add("text-center");
 mainParagraph.innerHTML =
-  "Merci d'avoir choisi Orinoco pour vos achats. Votre numero de commande est le" +
-  orderId +
-  ", pour une valeur de " +
-  total +
-  ".";
+  "Toute l'équipe d'Orinoco vous remercie pour votre confiance. Nous espérons vous revoir très bientôt sur notre site.";
+const orderContainer = document.getElementById("orderContainer");
+//orderContainer.classList.add("col-12");
+const orderParagraph = document.createElement("p");
+orderParagraph.setAttribute("id", "orderParagraph");
+orderContainer.appendChild(orderParagraph);
+orderParagraph.innerHTML = "votre numero de commande est le:";
+const orderNumber = document.createElement("h2");
+orderContainer.appendChild(orderNumber);
+orderNumber.innerHTML = orderId;
+const totalContainer = document.getElementById("totalContainer");
+//totalContainer.classList.add("col-12");
+const totalParagraph = document.createElement("p");
+totalParagraph.setAttribute("id", "totalParagraph");
+totalContainer.appendChild(totalParagraph);
+totalParagraph.innerHTML = "Le montant total de votre commande est de:";
+const totalPrice = document.createElement("h2");
+totalContainer.appendChild(totalPrice);
+totalPrice.innerHTML = total + " €";

@@ -1,11 +1,33 @@
 @mixin codeForForm {
-    background-color: $forthColor;
-    height: 5em;
-    color: $firstColor;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom:  10%;
-    margin-top: 5%;
-    margin-left: 3%;
-    margin-right: 3%;
+  background-color: $forthColor;
+  color: $firstColor;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+  min-height: 60%;
+}
+@mixin generalSettings {
+  background-color: $secondColor;
+  color: $firstColor;
+  border-radius: 15%;
+  padding: 5px;
+}
+@mixin forConfirmationPage {
+  margin: 3%;
+  text-align: center;
+  border: 1px solid $secondColor;
+  padding: 5%;
+}
+@mixin forParagraph($color: $secondColor) {
+  color: $color;
+  font-size: 1em;
+  font-weight: 400;
+}
+@mixin forIdNamePrice($color: $secondColor) {
+  color: $color;
+  font-size: x-large;
+  font-weight: 700;
 }

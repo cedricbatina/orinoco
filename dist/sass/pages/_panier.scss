@@ -1,29 +1,36 @@
-#mySection{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+#mySection {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
-#table{
-    color: $secondColor;
-    min-height: 30%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-
-    }
-#tableHeader,#tableFooter{
-    background-color: $secondColor;
-    color: $firstColor;
-    font-size: 1em;
-    font-weight: bold;
+#mainPanier {
+  display: flex;
+  flex-flow: column nowrap;
 }
-
-td{
-    margin: 2.5%;
-    padding: 2%;
+#table {
+  color: $secondColor;
+  min-height: 30%;
+  margin-top: 3%;
+  margin-bottom: 5%;
 }
-#delete{
-    color: $seventhColor;
-    cursor: pointer;
-    font-size: .8em;
+#total {
+  font-weight: bold;
+}
+#tableHeader,
+#tableFooter {
+  font-size: 1em;
+  font-weight: bold;
+  @include generalSettings;
 }
 
+td {
+  margin: 4.5%;
+  padding: 5%;
+}
+/*#delete {
+  cursor: pointer;
+  font-size: 0.8em;
+  margin-left: 5%;
+  font-weight: 400;
+  @include generalSettings;
+}*/

@@ -5,14 +5,12 @@ const greatContainer = document.getElementById("greatContainer"); //code for the
 fetch("http://localhost:3000/api/cameras/" + id)
   .then((response) => response.json())
   .then((response) => {
-    console.log(response);
     generateProduct(response);
   })
   .catch((error) => {
     greatContainer.innerHTML =
       "<h2 id='messageError'>Le serveur a rencontré un probleme, veuillez ressayer plus tard !</h2>";
   }); // j'ai ajouté ceci pour l'erreur en cas de promesse non tenue
-
 // creating a function
 function generateProduct(response) {
   const mainTitle = document.createElement("h1");
@@ -23,18 +21,11 @@ function generateProduct(response) {
   greatContainer.appendChild(mainParagraph);
   mainParagraph.classList.add("text-center");
   mainParagraph.innerHTML =
-    "Voici la description complète de votre caméra vintage! Faites votre choix. Cliquez pour l'<span>ajouter dans votre panier</span>";
+    "Voici la description complète de votre caméra vintage! Personnalisez votre caméra avec une lentille adaptée à vos besoins. Cliquez pour l'<span>ajouter dans votre panier</span>";
   // here ends code for elements before #cameras
   //code for the great Container
   const productMainContainer = document.getElementById("productMainContainer");
   productMainContainer.setAttribute("data-ride", "carousel");
-
-  /*const productMainTitleContainer = document.createElement("div")
-      productMainContainer.appendChild(productMainTitleContainer)
-        const productMainTitle = document.createElement("h1")
-          productMainTitle.textContent = "Voici une présentation complète de votre appareil"
-          productMainTitleContainer.appendChild(productMainTitle)*/
-
   const product = document.getElementById("main");
   const carouselThing = document.createElement("div");
   product.appendChild(carouselThing);
@@ -50,36 +41,56 @@ function generateProduct(response) {
   productPicture.classList.add("w-100");
   productPicture.setAttribute("alt", "camera vintage");
   productPicture.setAttribute("id", "image");
+  const descriptionDuProduit = document.createElement("div");
+  descriptionDuProduit.setAttribute("id", "descriptionDuProduit");
+  product.appendChild(descriptionDuProduit);
   const productIdContainer = document.createElement("div");
-  product.appendChild(productIdContainer);
+  descriptionDuProduit.appendChild(productIdContainer);
   // code for article's name
-  const productId = document.createElement("h2");
-  productIdContainer.appendChild(productId);
+  const idParagraph = document.createElement("p");
+  descriptionDuProduit.appendChild(idParagraph);
+  idParagraph.innerHTML = "Réference du produit:";
+  idParagraph.classList.add("paragraphesDuProduit");
+  const productId = document.createElement("p");
+  descriptionDuProduit.appendChild(productId);
   productId.setAttribute("id", "numero");
-  productId.innerHTML = "Réf:" + "   " + id;
+  productId.innerHTML = id;
   const productTitleContainer = document.createElement("div");
-  product.appendChild(productTitleContainer);
-  const productTitle = document.createElement("h2");
+  descriptionDuProduit.appendChild(productTitleContainer);
+  const titleParagraph = document.createElement("p");
+  titleParagraph.classList.add("paragraphesDuProduit");
+
+  productTitleContainer.appendChild(titleParagraph);
+  titleParagraph.innerHTML = "Nom du produit:";
+  const productTitle = document.createElement("p");
   productTitleContainer.appendChild(productTitle);
   productTitle.setAttribute("id", "nom");
-  productTitle.innerHTML = "Nom:" + "    " + response.name;
+  productTitle.innerHTML = response.name;
   const productPriceContainer = document.createElement("div");
-  product.appendChild(productPriceContainer);
+  descriptionDuProduit.appendChild(productPriceContainer);
   // code for article's price
-  const productPrice = document.createElement("h3");
+  const priceParagraph = document.createElement("p");
+  productPriceContainer.appendChild(priceParagraph);
+  priceParagraph.classList.add("paragraphesDuProduit");
+  priceParagraph.innerHTML = "Prix du produit:";
+  const productPrice = document.createElement("p");
   productPriceContainer.appendChild(productPrice);
   productPrice.setAttribute("id", "prix");
-  productPrice.innerHTML = response.price + "    " + "Euros";
+  productPrice.innerHTML = response.price + " Euros";
   const productDescriptionContainer = document.createElement("div");
-  product.appendChild(productDescriptionContainer);
+  descriptionDuProduit.appendChild(productDescriptionContainer);
   // code for article's description
+  const descriptionParagraph = document.createElement("p");
+  productDescriptionContainer.appendChild(descriptionParagraph);
+  descriptionParagraph.classList.add("paragraphesDuProduit");
+  descriptionParagraph.innerHTML = "Description du produit";
   const productDescription = document.createElement("p");
   productDescriptionContainer.appendChild(productDescription);
   productDescription.setAttribute("id", "texte");
   productDescription.innerHTML = response.description;
   // let's create a selection inside a formular
   const lensesFormular = document.createElement("form");
-  product.appendChild(lensesFormular);
+  descriptionDuProduit.appendChild(lensesFormular);
   lensesFormular.setAttribute("id", "personnalisation");
   const lensesFieldset = document.createElement("fieldset");
   lensesFormular.appendChild(lensesFieldset);
@@ -88,8 +99,10 @@ function generateProduct(response) {
   lensesLegend.setAttribute("id", "lensesLegend");
   lensesLegend.innerHTML = "Personnalisez votre produit";
   //creating a label for select
+  const pLabel = document.createElement("p");
+  lensesFieldset.appendChild(pLabel);
   const optionLabel = document.createElement("label");
-  lensesFieldset.appendChild(optionLabel);
+  pLabel.appendChild(optionLabel);
   optionLabel.setAttribute = ("name", "lentilles");
   optionLabel.innerHTML = "Choisissez vos lentilles:" + "    ";
   optionLabel.setAttribute = ("for", "options");
@@ -124,31 +137,3 @@ function generateProduct(response) {
     window.location.href = "panier.html";
   });
 }
-
-// here begins my answer
-
-//  productDescription.textContent = description
-
-/*
-      greatContainer.appendChild(productTitle)
-      productTitle.classList.add("jumbotron","bg-dark","text-center","text-light","px-2","py-2")
-      productTitle.style.backgroundColor = "#9bc9ec"
-      productTitle.innerHTML = "Bienvenue chez Orinoco!"
-    const mainParagraph = document.createElement("p")
-     greatContainer.appendChild(mainParagraph)
-     mainParagraph.classList.add("text-center")
-     mainParagraph.innerHTML = "Votre e-magasin qui vous propose des caméras et vintage! Faites votre choix. Cliquez sur votre l'article de votre choix pour l'<span>ajouter dans votre panier</span>"
-                                                                // here ends code for elements before #cameras
-   const main = document.getElementById("cameras")
-    
-  answer = (element => {
-    const article = document.createElement("article")
-    const articleId = document.createElement("h2")
-    const articlePrice = document.createElement("h3")
-    const articleTitle = document.createElement("h2")
-    const articleDescription = document.createElement("p")
-    
-    
-})
-}
-*/

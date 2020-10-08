@@ -1,0 +1,21 @@
+#confirmation {
+  display: flex;
+  flex-direction: column nowrap;
+  margin-bottom: 30%;
+}
+
+#orderContainer {
+  @include forConfirmationPage;
+}
+#totalContainer {
+  @include forConfirmationPage;
+  margin-bottom: 30%;
+}
+#orderParagraph,
+#totalParagraph {
+  color: $secondColor;
+  font-weight: 300;
+}
+.success {
+  color: $thirdColor;
+}

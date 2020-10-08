@@ -1,24 +1,28 @@
-body{
-    background-color: $firstColor;
-} 
-.jumbotron{
-    background-color: $firstColor;
-    margin-top: 2%;
-    color: $secondColor;
+body {
+  background-color: $firstColor;
 }
- 
-p{
-    color: $firstColor;
-}
-a{
-    color: $firstColor;
-    font-weight: bold;
-    font-size: 1.5em;
+.jumbotron {
+  background-color: $firstColor;
+  margin-top: 5%;
+  color: $secondColor;
 }
 
-h2{
-    color: $secondColor;
+p {
+  @include forParagraph($color: $firstColor);
 }
-h3{
-    color: $thirdColor;
+a {
+  color: $firstColor;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+h2 {
+  color: $secondColor;
+}
+h3 {
+  color: $thirdColor;
+}
+.active {
+  color: $sixthColor;
+  font-size: 1em;
 }
