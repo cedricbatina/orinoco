@@ -125,7 +125,7 @@ checkInput = () => {
 // creating a button to submit
 const formularButton = document.createElement("button");
 contactFormular.appendChild(formularButton);
-formularButton.innerHTML = "Envoyer";
+formularButton.innerHTML = "Confirmer l'achat";
 formularButton.setAttribute("type", "submit");
 formularButton.classList.add("btn");
 formularButton.addEventListener("click", function (event) {

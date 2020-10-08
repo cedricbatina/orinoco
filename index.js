@@ -5,7 +5,7 @@ fetch("http://localhost:3000/api/cameras")
   })
   .catch((error) => {
     greatContainer.innerHTML =
-      "<h2 id='messageError'>Le serveur a rencontré un probleme, veuillez ressayer plus tard !</h2>";
+      "<h2 id='messageError'>Le serveur a rencontré un probleme, veuillez réessayer plus tard !</h2>";
   }); // j'ai ajouté ceci pour l'erreur en cas de promesse non tenue
 function generateCamera(response) {
   const greatContainer = document.getElementById("greatContainer"); //code for the great Container
