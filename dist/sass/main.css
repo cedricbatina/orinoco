@@ -321,6 +321,18 @@ td {
   font-weight: 300;
 }
 
+#orderNumber {
+  color: #28a745;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+#totalPrice {
+  color: #28a745;
+  font-size: x-large;
+  font-weight: 700;
+}
+
 .success {
   color: #28a745;
 }

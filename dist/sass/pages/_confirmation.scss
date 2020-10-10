@@ -16,6 +16,12 @@
   color: $secondColor;
   font-weight: 300;
 }
+#orderNumber {
+  @include forIdNamePrice($color: $thirdColor);
+}
+#totalPrice {
+  @include forIdNamePrice($color: $thirdColor);
+}
 .success {
   color: $thirdColor;
 }
