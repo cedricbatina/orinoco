@@ -9,7 +9,7 @@ fetch("http://localhost:3000/api/cameras/" + id)
   })
   .catch((error) => {
     greatContainer.innerHTML =
-      "<h2 id='messageError'>Le serveur a rencontré un probleme, veuillez ressayer plus tard !</h2>";
+      "<h2 class='messageError'>Le serveur a rencontré un probleme, veuillez ressayer plus tard !</h2>";
   }); // j'ai ajouté ceci pour l'erreur en cas de promesse non tenue
 // creating a function
 function generateProduct(response) {

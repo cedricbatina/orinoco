@@ -33,6 +33,10 @@ h3 {
   font-size: 1em;
 }
 
+.messageError {
+  color: #000000;
+}
+
 .btn {
   margin-bottom: 20%;
   text-align: center;
