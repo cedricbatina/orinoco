@@ -70,7 +70,7 @@ function generateCamera(response) {
     articleButton.textContent = "En savoir plus !";
     articleButton.classList.add("btn", "col-4");
     articleButton.addEventListener("click", function () {
-      window.location.href = "produit.html?id=" + element._id;
+      window.location.href = "public/produit.html?id=" + element._id;
     });
   });
 }
