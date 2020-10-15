@@ -126,6 +126,7 @@ formularButton.setAttribute("type", "submit");
 formularButton.classList.add("btn");
 formularButton.addEventListener("click", function (event) {
   return setButton(event);
+  
 });
 function myFunction() {
   const greatContainer = document.getElementById("greatContainer");
@@ -194,10 +195,9 @@ function setButton(event) {
     .then((res) => {
       window.location.href =
       "confirmation.html?id=" + res.orderId + "&total=" + total;
-      cameraInBasket.length = 0
-      total = 0
-      produit = []
-      window.location.reload()
+      produit.splice(0, cameraInBasket.length);
+      tableBody.innerHTML = ""
+  //window.location.reload();
     })
     .catch(function (res) {
      alert(res)

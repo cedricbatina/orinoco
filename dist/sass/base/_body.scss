@@ -6,7 +6,6 @@ body {
   margin-top: 5%;
   color: $secondColor;
 }
-
 p {
   @include forParagraph($color: $firstColor);
 }
@@ -15,7 +14,6 @@ a {
   font-weight: bold;
   font-size: 1.5em;
 }
-
 h2 {
   color: $secondColor;
 }
@@ -28,4 +26,5 @@ h3 {
 }
 .messageError {
   color: $firstColor;
+  text-align: center;
 }
