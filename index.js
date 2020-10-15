@@ -56,7 +56,7 @@ function generateCamera(response) {
     const articlePrice = document.createElement("p");
     articlePrice.setAttribute("id", "articlePrice");
     section.appendChild(articlePrice);
-    articlePrice.textContent = element.price + " Euros";
+    articlePrice.textContent = element.price /1000 + " Euros";
     // code for picture
     const articlePicture = document.createElement("img");
     article.appendChild(articlePicture);

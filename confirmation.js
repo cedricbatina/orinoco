@@ -31,4 +31,4 @@ totalParagraph.innerHTML = "Le montant total de votre commande est de:";
 const totalPrice = document.createElement("p");
 totalPrice.setAttribute("id", "totalPrice");
 totalContainer.appendChild(totalPrice);
-totalPrice.innerHTML = total + " Euros";
+totalPrice.innerHTML = total  + " Euros";

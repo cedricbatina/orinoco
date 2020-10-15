@@ -1,15 +1,6 @@
 //code for the great Container
-const greatContainer = document.getElementById("greatContainer");
-const mainTitle = document.createElement("h1");
-greatContainer.appendChild(mainTitle);
-mainTitle.classList.add("jumbotron", "text-center");
-mainTitle.innerHTML = "Votre panier !";
-const mainParagraph = document.createElement("p");
-greatContainer.appendChild(mainParagraph);
-mainParagraph.classList.add("text-center");
-mainParagraph.innerHTML = "Voici le récapitulatif de votre panier";
+myFunction();
 // here ends code for elements before #cameras
-console.log(localStorage.getItem("panier"));
 // getting the the selected cameras
 let cameraInBasket = JSON.parse(localStorage.getItem("panier"));
 const section = document.getElementById("mySection");
@@ -38,7 +29,7 @@ tableFooterContent1.textContent = "Total de la commande:";
 let tableFooterContent2 = document.createElement("td");
 tableFooterContents.appendChild(tableFooterContent2);
 tableFooterContent2.setAttribute("id", "total");
-tableFooterContent2.textContent = total + "€";
+tableFooterContent2.textContent = total + " €";
 const buttonSup = document.getElementsByClassName("delete"); // creating a button to delete the product if needed
 for (let index = 0; index < buttonSup.length; index++) {
   suppressCamera(index); // calling the function to suppress camera from the basket
@@ -103,7 +94,7 @@ checkInputs = () => {
         checkCount++
   }
   //Test de l'adresse => l'adresse ne contient pas obligatoirement un numéro de rue mais n'a pas de characteres spéciaux
-  if (specialRegex.test(address) == false || address == "") {
+  if (specialRegex.test(address) == true || address == "") {
     checkMessageAddressError.textContent = " Vérifier votre adresse";
   } else {
         checkCount++
@@ -113,7 +104,7 @@ checkInputs = () => {
     (specialRegex.test(city) == true && checkNumber.test(city) == true) ||
     city == ""
   ) {
-    checkMessageCityError.textContent = " Vérifier votre ville";
+    checkMessageCityError.textContent = " Vérifier le nom de votre ville";
   } else {
         checkCount++
   }
@@ -136,6 +127,17 @@ formularButton.classList.add("btn");
 formularButton.addEventListener("click", function (event) {
   return setButton(event);
 });
+function myFunction() {
+  const greatContainer = document.getElementById("greatContainer");
+  const mainTitle = document.createElement("h1");
+  greatContainer.appendChild(mainTitle);
+  mainTitle.classList.add("jumbotron", "text-center");
+  mainTitle.innerHTML = "Votre panier !";
+  const mainParagraph = document.createElement("p");
+  greatContainer.appendChild(mainParagraph);
+  mainParagraph.classList.add("text-center");
+  mainParagraph.innerHTML = "Voici le récapitulatif de votre panier";
+}
 // here ends code for submit button
 // down below we find the functions
 //function to suppress camera
@@ -152,13 +154,13 @@ function suppressCamera(index) {
 //function to generate tbody
 function generateTbody(i) {
   produit.push(cameraInBasket[i]._id);
-  total += cameraInBasket[i].price;
+  total += cameraInBasket[i].price / 1000;
   tableBody.innerHTML +=
     "<tr><td>" +
     cameraInBasket[i].name +
     "</td><td>" +
-    cameraInBasket[i].price +
-    "€" +
+    cameraInBasket[i].price / 1000 +
+    " €" +
     "</td><td>" +
     "<button " +
     i +
@@ -191,11 +193,13 @@ function setButton(event) {
     .then((res) => res.json())
     .then((res) => {
       window.location.href =
-        "confirmation.html?id=" + res.orderId + "&total=" + total;
+      "confirmation.html?id=" + res.orderId + "&total=" + total;
+      cameraInBasket.length = 0
+      total = 0
+      produit = []
+      window.location.reload()
     })
     .catch(function (res) {
      alert(res)
     });
 }
-
-

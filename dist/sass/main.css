@@ -281,6 +281,10 @@ span {
   padding: 5px;
 }
 
+#prix {
+  min-width: 5rem;
+}
+
 td {
   margin: 4.5%;
   padding: 5%;

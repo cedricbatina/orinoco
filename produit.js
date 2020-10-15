@@ -76,7 +76,7 @@ function generateProduct(response) {
   const productPrice = document.createElement("p");
   productPriceContainer.appendChild(productPrice);
   productPrice.setAttribute("id", "prix");
-  productPrice.innerHTML = response.price + " Euros";
+  productPrice.innerHTML = response.price / 1000 + " Euros";
   const productDescriptionContainer = document.createElement("div");
   descriptionDuProduit.appendChild(productDescriptionContainer);
   // code for article's description
@@ -113,7 +113,6 @@ function generateProduct(response) {
   const lenses = document.createElement("optgroup");
   selection.appendChild(lenses);
   response.lenses.forEach((element) => {
-    console.log(element);
     const optionSelection = document.createElement("option");
     optionSelection.textContent = element;
     lenses.appendChild(optionSelection);
