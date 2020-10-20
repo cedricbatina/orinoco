@@ -1,11 +1,12 @@
 //code for the great Container
-myFunction();
+let cameraInBasket = JSON.parse(localStorage.getItem("panier"));
+const products = document.getElementById("table");
+
+createHeader();
 // here ends code for elements before #cameras
 // getting the the selected cameras
-let cameraInBasket = JSON.parse(localStorage.getItem("panier"));
 const section = document.getElementById("mySection");
 // calling the table
-const products = document.getElementById("table");
 let tableTitle = document.getElementById("tableTitle"); // calling the <thead>
 let tableItemName = document.createElement("td");
 tableItemName.classList.add("name");
@@ -128,7 +129,7 @@ formularButton.addEventListener("click", function (event) {
   return setButton(event);
   
 });
-function myFunction() {
+function createHeader() {
   const greatContainer = document.getElementById("greatContainer");
   const mainTitle = document.createElement("h1");
   greatContainer.appendChild(mainTitle);
@@ -137,7 +138,14 @@ function myFunction() {
   const mainParagraph = document.createElement("p");
   greatContainer.appendChild(mainParagraph);
   mainParagraph.classList.add("text-center");
+  if (cameraInBasket === null || cameraInBasket.length <= 0) {
+  mainParagraph.innerHTML = "Votre panier est vide";
+  products.style.display = "none"
+  }
+  else{
   mainParagraph.innerHTML = "Voici le récapitulatif de votre panier";
+  products.style.display = "table"
+}
 }
 // here ends code for submit button
 // down below we find the functions
@@ -197,7 +205,6 @@ function setButton(event) {
       "confirmation.html?id=" + res.orderId + "&total=" + total;
       produit.splice(0, cameraInBasket.length);
       tableBody.innerHTML = ""
-  //window.location.reload();
     })
     .catch(function (res) {
      alert(res)

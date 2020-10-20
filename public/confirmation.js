@@ -1,8 +1,9 @@
-const conf = window.location.search;
-const searchConf = new URLSearchParams(conf);
+function createPage(){
+ const conf = window.location.search;
+ const searchConf = new URLSearchParams(conf);
 const orderId = searchConf.get("id");
 const total = searchConf.get("total");
-let cameraBasket = JSON.parse(localStorage.getItem("confirmation"));
+localStorage.removeItem("panier")
 const mainTitle = document.createElement("h1");
 greatContainer.appendChild(mainTitle);
 mainTitle.classList.add("jumbotron", "text-center", "success");
@@ -32,3 +33,5 @@ const totalPrice = document.createElement("p");
 totalPrice.setAttribute("id", "totalPrice");
 totalContainer.appendChild(totalPrice);
 totalPrice.innerHTML = total  + " Euros";
+}
+createPage()
